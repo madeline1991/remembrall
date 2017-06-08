@@ -1,0 +1,8 @@
+head, body, h1, ul, li, section {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: inherit;
+  box-sizing: border-box;
+  text-decoration: none;
+}
