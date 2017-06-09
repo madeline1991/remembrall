@@ -1,4 +1,4 @@
-head, body, h1, ul, li, section, button, nav {
+head, body, h1, ul, li, section, button, nav, h2 {
   margin: 0;
   padding: 0;
   border: none;
@@ -16,21 +16,29 @@ head, body, h1, ul, li, section, button, nav {
   src: url('./fonts/WitchesMagic.ttf') format('trueType');
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 nav {
   font-family: "Lumos";
-  background: red;
+  background: #dc0000;
   padding: 10px 0px;
-  width: 100%;
   text-align: center;
   box-shadow: 1px 6px 9px -4px rgba(0, 0, 0, 0.22);
   color: white;
   font-weight: bold;
+}
+
+.lists {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.lists section:last-child {
+  margin-left: 30px;
+}
+
+.lists h2 {
+  text-decoration: underline;
+  text-align: center;
 }
 
 button {
