@@ -8,12 +8,25 @@
     <script src="bundle.js"></script>
   </head>
   <body>
-    <nav>Remembrall</nav>
-    <section>
-      <h1> Incomplete </h1>
-      <ul id="todo-list">
-        <li>Make flan</li>
-      </ul>
+    <nav>
+      <h1>Remembrall</h1>
+    </nav>
+
+    <section class="lists">
+      <section class="incomplete">
+        <h2> Incomplete </h2>
+        <ul id="todo-list">
+          <li>Make flan</li>
+          <li>Sleep</li>
+        </ul>
+      </section>
+
+      <section class="complete">
+        <h2> Completed </h2>
+        <ul id="completed-todo">
+          <li>Make flan</li>
+        </ul>
+      </section>
     </section>
 
     <section>
@@ -21,5 +34,6 @@
       <input id="todo-title" type="text" value="">
       <button id="submit">Add Todo</button>
     </section>
+
   </body>
 </html>

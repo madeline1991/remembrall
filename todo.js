@@ -1,6 +1,7 @@
 
 export const add_listeners = () => {
-  $("#submit").click(()=> add_todo());
+  $("#submit").click(() => add_todo());
+  $("li").click((e) => delete_todo(e));
 };
 
 const add_todo = () => {
@@ -12,4 +13,8 @@ const add_todo = () => {
     $todoList.append(newTodo);
     $title.val("");
   };
+};
+
+const delete_todo = (e) => {
+  $(e.target).remove();
 };
