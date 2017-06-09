@@ -1,18 +1,36 @@
-head, body, h1, ul, li, section, button {
+head, body, h1, ul, li, section, button, nav {
   margin: 0;
   padding: 0;
   border: none;
-  font-family: inherit;
+  font-family: 'Lumos';
   box-sizing: border-box;
   text-decoration: none;
   background: transparent;
   list-style: none;
 }
 
+@font-face {
+  font-family: 'Lumos';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./fonts/WitchesMagic.ttf') format('trueType');
+}
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+nav {
+  font-family: "Lumos";
+  background: red;
+  padding: 10px 0px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 1px 6px 9px -4px rgba(0, 0, 0, 0.22);
+  color: white;
+  font-weight: bold;
 }
 
 button {
