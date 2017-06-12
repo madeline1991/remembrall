@@ -32,9 +32,22 @@ export function dragover_handler(ev) {
 export function drop_handler(ev) {
  ev.preventDefault();
  var data = ev.dataTransfer.getData("text/html");
+ const $element = $(`#${data}`);
  if ($(ev.currentTarget).hasClass('complete')) {
-   $("#completed-todo").append(document.getElementById(data));
+   $element.attr("id", `${getID('complete')}`);
+   $("#completed-todo").append($element);
  } else if ($(ev.currentTarget).hasClass('incomplete')) {
-   $("#todo-list").append(document.getElementById(data));
+   $element.attr("id", `${getID('incomplete')}`);
+   $("#todo-list").append($element);
  }
 }
+
+const getID = (listClass) => {
+  if (listClass === "complete") {
+    const number = $("#completed-todo").children().length + 1;
+    return `cd${number}`;
+  } else {
+    const number = $("#todo-list").children().length + 1;
+    return `td${number}`;
+  }
+};
