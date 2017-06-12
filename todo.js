@@ -8,7 +8,7 @@ const add_todo = () => {
   const $title = $("#todo-title");
   const $todoList = $("#todo-list");
   const todoTitle = $title.val();
-  const newTodo = `<li draggable="true">${todoTitle}</li>`;
+  const newTodo = `<li id=td${$todoList.children().length + 1} draggable="true" ondragstart="dragstart_handler(event)">${todoTitle}</li>`;
   if (todoTitle != "") {
     $todoList.append(newTodo);
     $title.val("");
