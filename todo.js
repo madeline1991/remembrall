@@ -1,14 +1,16 @@
 
 export const add_listeners = () => {
   $("#submit").click(() => add_todo());
-  // $("li").click((e) => delete_todo(e));
+  $("ul").on('click','button',((e) => delete_todo(e)));
 };
 
 const add_todo = () => {
   const $title = $("#todo-title");
   const $todoList = $("#todo-list");
   const todoTitle = $title.val();
-  const newTodo = `<li id=td${todoTitle} draggable="true" ondragstart="dragstart_handler(event)">${todoTitle}</li>`;
+  const newTodo = `<li id=td${todoTitle} draggable="true" ondragstart="dragstart_handler(event)">
+      <button class="delete">X</button>
+      ${todoTitle}</li>`;
   if (todoTitle != "") {
     $todoList.append(newTodo);
     $title.val("");
@@ -16,7 +18,7 @@ const add_todo = () => {
 };
 
 const delete_todo = (e) => {
-  $(e.target).remove();
+  $(e.target).parent().remove();
 };
 
 export function dragstart_handler(ev) {

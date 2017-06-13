@@ -64,6 +64,7 @@ li {
   font-size: 26px;
   margin-top: 5px;
   text-align: center;
+  position:relative;
 }
 
 .create-todo {
@@ -71,6 +72,18 @@ li {
   justify-content: center;
   margin-top: 10px;
   color: whitesmoke;
+}
+
+.delete {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 6px;
+  z-index: 1px;
+}
+
+.delete:hover {
+  cursor: pointer;
 }
 
 button {
