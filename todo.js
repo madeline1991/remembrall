@@ -8,7 +8,7 @@ const add_todo = () => {
   const $title = $("#todo-title");
   const $todoList = $("#todo-list");
   const todoTitle = $title.val();
-  const newTodo = `<li id=td${$todoList.children().length + 1} draggable="true" ondragstart="dragstart_handler(event)">${todoTitle}</li>`;
+  const newTodo = `<li id=td${todoTitle} draggable="true" ondragstart="dragstart_handler(event)">${todoTitle}</li>`;
   if (todoTitle != "") {
     $todoList.append(newTodo);
     $title.val("");
@@ -34,20 +34,20 @@ export function drop_handler(ev) {
  var data = ev.dataTransfer.getData("text/html");
  const $element = $(`#${data}`);
  if ($(ev.currentTarget).hasClass('complete')) {
-   $element.attr("id", `${getID('complete')}`);
+   $element.attr("id", `cd${$element.val()}`);
    $("#completed-todo").append($element);
  } else if ($(ev.currentTarget).hasClass('incomplete')) {
-   $element.attr("id", `${getID('incomplete')}`);
+   $element.attr("id", `td${$element.val()}`);
    $("#todo-list").append($element);
  }
 }
 
-const getID = (listClass) => {
-  if (listClass === "complete") {
-    const number = $("#completed-todo").children().length + 1;
-    return `cd${number}`;
-  } else {
-    const number = $("#todo-list").children().length + 1;
-    return `td${number}`;
-  }
-};
+// const getID = (listClass) => {
+//   if (listClass === "complete") {
+//     const number = $("#completed-todo").children().length + 1;
+//     return `cd${number}`;
+//   } else {
+//     const number = $("#todo-list").children().length + 1;
+//     return `td${number}`;
+//   }
+// };
