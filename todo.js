@@ -8,7 +8,7 @@ const add_todo = () => {
   const $title = $("#todo-title");
   const $todoList = $("#todo-list");
   const todoTitle = $title.val();
-  const newTodo = `<li id=td${todoTitle} draggable="true" ondragstart="dragstart_handler(event)">
+  const newTodo = `<li id=${getDate()} draggable="true" ondragstart="dragstart_handler(event)">
       <button class="delete">X</button>
       ${todoTitle}</li>`;
   if (todoTitle != "") {
@@ -35,21 +35,15 @@ export function drop_handler(ev) {
  ev.preventDefault();
  var data = ev.dataTransfer.getData("text/html");
  const $element = $(`#${data}`);
+ $element.attr("id", `${getDate()}`);
+
  if ($(ev.currentTarget).hasClass('complete')) {
-   $element.attr("id", `cd${$element.val()}`);
    $("#completed-todo").append($element);
  } else if ($(ev.currentTarget).hasClass('incomplete')) {
-   $element.attr("id", `td${$element.val()}`);
    $("#todo-list").append($element);
  }
 }
 
-// const getID = (listClass) => {
-//   if (listClass === "complete") {
-//     const number = $("#completed-todo").children().length + 1;
-//     return `cd${number}`;
-//   } else {
-//     const number = $("#todo-list").children().length + 1;
-//     return `td${number}`;
-//   }
-// };
+const getDate = () => {
+  return Date.now();
+};
