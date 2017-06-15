@@ -1,4 +1,7 @@
 
+<!-- in my script for the library, instead of requiring the entry file, bundle it, push the bundle up in the actual DOM swap, and require the bundle in the script. -->
+<!-- This will fix the module import and require problem. I need to do hte bundling in the actual dom swap git and include the bundle here. -->
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -6,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="todo.css">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <script type="text/javascript" src="./domswap/lib/domswap.js"></script>
     <script src="bundle.js"></script>
   </head>
   <body>
