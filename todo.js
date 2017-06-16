@@ -36,10 +36,11 @@ export function drop_handler(ev) {
  var data = ev.dataTransfer.getData("text/html");
  const $lelement = $l(`#${data}`);
  $lelement.remove($lelement);
+
  if ($l(ev.currentTarget).hasClass('complete')) {
    $lelement.attr("id", `cd${getDate()}`);
    $l("#completed-todo").append($lelement);
- } else if ($(ev.currentTarget).hasClass('incomplete')) {
+ } else if ($l(ev.currentTarget).hasClass('incomplete')) {
    $lelement.attr("id", `td${getDate()}`);
    $l("#todo-list").append($lelement);
  }
