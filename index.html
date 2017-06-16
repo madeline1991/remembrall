@@ -6,7 +6,6 @@
   <head>
     <meta charset="utf-8">
     <title>Remembrall</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="todo.css">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <script type="text/javascript" src="./domswap/lib/domswap.js"></script>
@@ -33,7 +32,7 @@
 
       <section class="complete" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
         <h2> Completed </h2>
-        <ul id="completed-todo" style="overflow-y:scroll; height:183px;">
+        <ul id="completed-todo">
           <li id="cd1" draggable="true" ondragstart="dragstart_handler(event)">
             <button class="delete">X</button>
             Make flan</li>
