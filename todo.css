@@ -1,4 +1,4 @@
-head, body, h1, ul, li, section, button, nav, h2 {
+head, body, h1, ul, li, section, button, nav, h2, h3, h4 {
   margin: 0;
   padding: 0;
   border: none;
@@ -30,8 +30,17 @@ nav {
   font-weight: bold;
 }
 
-.lists {
+.explanation {
+  margin-top: 20px;
+  text-align: center;
+}
+
+h4 {
   margin-top: 10px;
+}
+
+.lists {
+  margin-top: 15px;
   display: flex;
   justify-content: center;
   color: whitesmoke;
